@@ -54,12 +54,16 @@
 #ifndef REFLECT
 #define REFLECT 1'2'0 // SemVer
 
+#if REFLECT_USE_STD_MODULE == 1
+import std;
+#else
 #include <array>
 #include <string_view>
 #include <source_location>
 #include <type_traits>
 #include <tuple>
 #include <utility>
+#endif
 
 #if not defined(REFLECT_ENUM_MIN)
 #define REFLECT_ENUM_MIN -1
